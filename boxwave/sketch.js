@@ -35,7 +35,7 @@ function draw() {
   rotateX(-ma);
   rotateY(-QUARTER_PI);
   // rotateZ(frameCount * 0.001);
-  rotateY(frameCount * 0.01);
+  // rotateY(frameCount * 0.01);
 
   let offset = 0;
   for (let z = 0; z < height; z += w) {
@@ -44,12 +44,11 @@ function draw() {
       let d = dist(x, z, width / 2, height / 2);
       let offset = map(d, 0, maxD, -PI, PI);
       let a = angle + offset;
-      let h = map(sin(a), -1, 1, 50, level * 750 + 100);
+      let h = map(sin(a), -1, 1, 50, level * 750 + 300);
       translate(x - width / 2, 0, z - height / 2);
       // ambientMaterial(255);
       normalMaterial();
       box(w - 2, h, w - 2);
-      // rect(x - width / 2 + w / 2, 0, w - 2, h);
       pop();
     }
   }
